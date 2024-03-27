@@ -16,8 +16,12 @@ class RegistrationAPIView(APIView):
 class VerificationAPIView(APIView):
     def post(self, request):
         serializer = EmailOTPSerializer(data=request.data)
-        #
-        return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
+        if serializer.is_valid():
+            email = serializer.validated_data['email']
+            otp = generate_otp()
+            send_otp_email(email, otp)
+            return Response({"message": "OTP sent successfully"}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginAPIView(APIView):
     def post(self, request):
