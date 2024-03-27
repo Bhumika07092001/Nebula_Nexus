@@ -20,7 +20,6 @@ class LoginOTPSerializer(serializers.Serializer):
 
 class EmailOTPSerializer(serializers.Serializer):
     email = serializers.EmailField()
-    otp = serializers.CharField()
 
 class ForgotPasswordSerializer(serializers.Serializer):
     email = serializers.EmailField()
