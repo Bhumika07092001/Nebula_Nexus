@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-fg^7u@f9rh2k_r!g)ntbxv_^3e!*yu57$&01i83%m2m6#8_orl
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-# UserAuth/settings.py
 AUTH_USER_MODEL = 'Users.CustomUser'
 
 
@@ -136,8 +135,15 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
+
     'DEFAULT_PERMISSION_CLASSES': [
     ]
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'bhumikabaghel43@gmail.com'  
+EMAIL_HOST_PASSWORD = 'your password'
+
