@@ -17,7 +17,7 @@ class VerificationAPIView(APIView):
     def post(self, request):
         serializer = EmailOTPSerializer(data=request.data)
         #
-        return Response("Verification logic not implemented yet", status=status.HTTP_501_NOT_IMPLEMENTED)
+        return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
 
 class LoginAPIView(APIView):
     def post(self, request):
@@ -47,11 +47,11 @@ class ForgotPasswordAPIView(APIView):
     def post(self, request):
         serializer = ForgotPasswordSerializer(data=request.data)
         # 
-        return Response("Forgot password logic not implemented yet", status=status.HTTP_501_NOT_IMPLEMENTED)
+        return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
 
 class ResetPasswordAPIView(APIView):
     def post(self, request):
         serializer = ResetPasswordSerializer(data=request.data)
         # 
-        return Response("Reset password logic not implemented yet", status=status.HTTP_501_NOT_IMPLEMENTED)
+        return Response(status=status.HTTP_501_NOT_IMPLEMENTED)
 
